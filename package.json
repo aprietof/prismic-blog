@@ -12,7 +12,7 @@
     "lint:js": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:js:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "lint:md": "prettier --write *.md",
-    "develop": "rm -rf .cache && gatsby develop"
+    "develop": "rm -rf ./.cache/  && rm -rf ./public/ && gatsby develop"
   },
   "dependencies": {
     "emotion": "^9.2.12",

@@ -4,6 +4,7 @@ import styled from 'react-emotion';
 
 const Content = styled.div`
   max-width: ${props => props.theme.maxWidthText};
+  margin: ${props => props.theme.margin.center};
 `;
 
 const BodyText = ({ input }) => <Content dangerouslySetInnerHTML={{ __html: input.primary.text.html }} />;

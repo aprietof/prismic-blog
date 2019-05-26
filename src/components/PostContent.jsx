@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BodyText, CodeBlock, Image, Quote } from 'slices';
 import styled from 'react-emotion';
 import { prism } from 'styles';
+import { BodyText, CodeBlock, Image, Quote } from './slices';
 
 const Content = styled.div`
   ${prism};
@@ -30,7 +30,7 @@ const Content = styled.div`
   }
 `;
 
-export default class SliceZone extends Component {
+export default class PostContent extends Component {
   render() {
     const { allSlices } = this.props;
     const slice = allSlices.map(s => {
@@ -52,6 +52,6 @@ export default class SliceZone extends Component {
   }
 }
 
-SliceZone.propTypes = {
+PostContent.propTypes = {
   allSlices: PropTypes.array.isRequired,
 };

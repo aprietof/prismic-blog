@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'react-emotion';
-import { Layout, Listing, Wrapper, SliceZone, Title, SEO, Header } from 'components';
+import { Layout, Listing, Wrapper, PostContent, Title, SEO, Header } from 'components';
 import Img from 'gatsby-image';
 import Categories from '../components/Listing/Categories';
 import website from '../../config/website';
@@ -45,7 +45,7 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
       </Hero>
       <Wrapper>
         <Img fluid={data.featured_image.localFile.childImageSharp.fluid} />
-        <SliceZone allSlices={data.body} />
+        <PostContent allSlices={data.body} />
         <Title style={{ marginTop: '4rem' }}>Recent posts</Title>
         <Listing posts={posts.edges} />
       </Wrapper>

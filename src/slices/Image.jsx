@@ -12,6 +12,7 @@ const Content = styled.div`
     display: block;
     margin: ${props => `${props.theme.margin.top.small} auto 0`};
     max-width: ${props => props.theme.maxWidthText};
+    text-align: center;
   }
 `;
 

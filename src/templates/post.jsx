@@ -45,7 +45,7 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
       </Hero>
       <Wrapper>
         <Img fluid={data.featured_image.localFile.childImageSharp.fluid} />
-        <PostContent allSlices={data.body} />
+        <PostContent slices={data.body} />
         <Title style={{ marginTop: '4rem' }}>Recent posts</Title>
         <Listing posts={posts.edges} />
       </Wrapper>

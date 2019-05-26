@@ -40,7 +40,6 @@
     "no-use-before-define": 0,
     "import/no-extraneous-dependencies": 0,
     "react/no-danger": 0,
-    "react/prefer-stateless-function": 0,
     "import/prefer-default-export": 0,
     "import": 0,
     "func-names": 0,
@@ -67,7 +66,7 @@
         "allowTemplateLiterals": true
       }
     ],
-    "indent": ["error", 2, {"SwitchCase": 1}],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "prettier/prettier": [
       "error",
       {

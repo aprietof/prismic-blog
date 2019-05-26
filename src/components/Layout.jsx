@@ -1,6 +1,6 @@
 /* eslint no-unused-expressions: 0 */
 
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { injectGlobal } from 'emotion';
@@ -9,6 +9,42 @@ import 'typeface-lora';
 import 'typeface-source-sans-pro';
 import { Footer, SEO } from 'components';
 import { theme, reset } from 'styles';
+
+const PureLayout = ({ children, data }) => (
+  <ThemeProvider theme={theme}>
+    <>
+      <SEO />
+      {children}
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: data.prismicHomepage.data.footer.html }} />
+      </Footer>
+    </>
+  </ThemeProvider>
+);
+
+export default function Layout(props) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query LayoutQuery {
+          prismicHomepage {
+            data {
+              footer {
+                html
+              }
+            }
+          }
+        }
+      `}
+      render={data => <PureLayout {...props} data={data} />}
+    />
+  );
+}
+
+PureLayout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
+  data: PropTypes.object.isRequired,
+};
 
 injectGlobal`
   ${reset}
@@ -63,43 +99,3 @@ injectGlobal`
     }
   }
 `;
-
-const PureLayout = ({ children, data }) => (
-  <ThemeProvider theme={theme}>
-    <>
-      <SEO />
-      {children}
-      <Footer>
-        <div dangerouslySetInnerHTML={{ __html: data.prismicHomepage.data.footer.html }} />
-      </Footer>
-    </>
-  </ThemeProvider>
-);
-
-class Layout extends Component {
-  render() {
-    return (
-      <StaticQuery
-        query={graphql`
-          query LayoutQuery {
-            prismicHomepage {
-              data {
-                footer {
-                  html
-                }
-              }
-            }
-          }
-        `}
-        render={data => <PureLayout {...this.props} data={data} />}
-      />
-    );
-  }
-}
-
-export default Layout;
-
-PureLayout.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
-  data: PropTypes.object.isRequired,
-};

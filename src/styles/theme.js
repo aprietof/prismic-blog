@@ -18,8 +18,12 @@ const theme = {
     l: '1200px',
   },
   margin: {
+    top: {
+      small: '10px',
+    },
     center: '0 auto',
   },
+  contentSeparator: '1.45rem',
 };
 
 export default theme;

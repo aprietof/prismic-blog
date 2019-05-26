@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 const BlockQuote = styled.blockquote`
+  margin: ${props => props.theme.margin.center};
+  margin-bottom: ${props => props.theme.contentSeparator};
   max-width: ${props => props.theme.maxWidthText};
 `;
 

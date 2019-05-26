@@ -4,9 +4,16 @@ import styled from 'react-emotion';
 import Img from 'gatsby-image';
 
 const Content = styled.div`
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   margin: ${props => props.theme.margin.center};
+  max-width: ${props => props.theme.maxWidthText};
+  padding-bottom: ${props => props.theme.contentSeparator};
+
+  small {
+    display: block;
+    margin-top: ${props => props.theme.margin.top.small};
+    margin: ${props => props.theme.margin.center};
+    max-width: ${props => props.theme.maxWidthText};
+  }
 `;
 
 const Image = ({ input }) => (

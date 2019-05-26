@@ -121,6 +121,18 @@ export const pageQuery = graphql`
               }
             }
           }
+          ... on PrismicPostBodyEmbed {
+            slice_type
+            id
+            primary {
+              content {
+                height
+                width
+                provider_name
+                embed_url
+              }
+            }
+          }
           ... on PrismicPostBodyImage {
             slice_type
             id

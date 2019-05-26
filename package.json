@@ -40,7 +40,9 @@
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
+    "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.13",
+    "twitter-url-parser": "^0.0.1",
     "typeface-lora": "^0.0.54",
     "typeface-source-sans-pro": "^0.0.54",
     "typography": "^0.16.17"

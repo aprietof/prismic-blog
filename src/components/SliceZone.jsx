@@ -20,7 +20,6 @@ const Content = styled.div`
     }
   }
   blockquote {
-    margin-left: 0;
     padding-left: 1.45rem;
     border-left: 2px solid ${props => props.theme.colors.primary};
     p {

@@ -10,8 +10,7 @@ const Content = styled.div`
 
   small {
     display: block;
-    margin-top: ${props => props.theme.margin.top.small};
-    margin: ${props => props.theme.margin.center};
+    margin: ${props => `${props.theme.margin.top.small} auto 0`};
     max-width: ${props => props.theme.maxWidthText};
   }
 `;

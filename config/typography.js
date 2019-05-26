@@ -7,7 +7,14 @@ const typography = new Typography({
   title: 'Gatsby Starter Prismic.io',
   baseFontSize: '18px',
   baseLineHeight: 1.45,
+  googleFonts: [
+    {
+      name: 'Roboto',
+      styles: ['700'],
+    },
+  ],
   headerFontFamily: [
+    'Roboto',
     'Lora',
     '-apple-system',
     'BlinkMacSystemFont',

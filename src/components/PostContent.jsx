@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { prism } from 'styles';
-import { BodyText, CodeBlock, Image, Quote } from './slices';
+import { BodyText, CodeBlock, Embed, Image, Quote } from './slices';
 
 export default function PostContent({ slices }) {
   return (
@@ -18,6 +18,8 @@ export default function PostContent({ slices }) {
             return <Image key={slice.id} input={slice} />;
           case 'quote':
             return <Quote key={slice.id} input={slice} />;
+          case 'embed':
+            return <Embed key={slice.id} input={slice} />;
           default:
             return null;
         }

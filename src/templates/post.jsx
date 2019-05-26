@@ -126,10 +126,12 @@ export const pageQuery = graphql`
             id
             primary {
               content {
-                height
-                width
-                provider_name
                 embed_url
+                height
+                html
+                provider_name
+                title
+                width
               }
             }
           }

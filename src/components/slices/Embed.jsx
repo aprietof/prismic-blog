@@ -30,6 +30,8 @@ export default function Embed({ input }) {
                 <Tweet tweetId={getTweetId(url).id} />
               </IframeWrapper>
             );
+          case 'Vimeo':
+            return <ResponsiveIframe src={`https://player.vimeo.com/video/${getVideoId(url).id}`} title={title} />;
 
           default:
             return <DefaultEmbed dangerouslySetInnerHTML={{ __html: html }} />;

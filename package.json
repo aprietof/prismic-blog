@@ -41,6 +41,7 @@
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
     "react-instagram-embed": "^1.5.0",
+    "react-intersection-observer": "^8.23.0",
     "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.13",
     "twitter-url-parser": "^0.0.1",
@@ -59,6 +60,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "prettier": "^1.14.3"
   },
   "keywords": [

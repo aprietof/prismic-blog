@@ -6,8 +6,9 @@ import { Tweet } from 'react-twitter-widgets';
 import getTweetId from 'twitter-url-parser';
 import InstagramEmbed from 'react-instagram-embed';
 import ResponsiveIframe from '../ResponsiveIframe';
+import withLazyLoad from '../HOC/withLazyLoad';
 
-export default function Embed({ input }) {
+function Embed({ input }) {
   const {
     primary: {
       content: { provider_name: providerName, title, embed_url: url, html },
@@ -47,6 +48,8 @@ export default function Embed({ input }) {
     </Content>
   );
 }
+
+export default withLazyLoad(Embed, { rootMargin: '0px 0px 400px 0px' });
 
 Embed.propTypes = {
   input: PropTypes.object.isRequired,

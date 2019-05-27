@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import Img from 'gatsby-image';
+import withLazyLoad from '../HOC/withLazyLoad';
 
 const Content = styled.div`
   margin: ${props => props.theme.margin.center};
@@ -23,7 +24,7 @@ const Image = ({ input }) => (
   </Content>
 );
 
-export default Image;
+export default withLazyLoad(Image);
 
 Image.propTypes = {
   input: PropTypes.object.isRequired,

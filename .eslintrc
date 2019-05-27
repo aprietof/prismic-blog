@@ -81,7 +81,9 @@
       {
         "aspects": ["invalidHref"]
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
-  "plugins": ["prettier"]
+  "plugins": ["prettier", "react-hooks"]
 }

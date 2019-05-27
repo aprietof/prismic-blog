@@ -4,6 +4,7 @@ import styled from 'react-emotion';
 import getVideoId from 'get-video-id';
 import { Tweet } from 'react-twitter-widgets';
 import getTweetId from 'twitter-url-parser';
+import InstagramEmbed from 'react-instagram-embed';
 import ResponsiveIframe from '../ResponsiveIframe';
 
 export default function Embed({ input }) {
@@ -32,6 +33,12 @@ export default function Embed({ input }) {
             );
           case 'Vimeo':
             return <ResponsiveIframe src={`https://player.vimeo.com/video/${getVideoId(url).id}`} title={title} />;
+          case 'Instagram':
+            return (
+              <IframeWrapper>
+                <InstagramEmbed url={url} hideCaption="false" />
+              </IframeWrapper>
+            );
 
           default:
             return <DefaultEmbed dangerouslySetInnerHTML={{ __html: html }} />;

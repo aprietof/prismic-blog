@@ -7,6 +7,8 @@ import { injectGlobal } from 'emotion';
 import { ThemeProvider } from 'emotion-theming';
 import 'typeface-lora';
 import 'typeface-source-sans-pro';
+import 'typeface-hind-vadodara';
+import 'typeface-roboto';
 import { Footer, SEO } from 'components';
 import { theme, reset } from 'styles';
 
@@ -49,7 +51,7 @@ PureLayout.propTypes = {
 injectGlobal`
   ${reset}
   h1, h2, h3, h4, h5, h6 {
-    color: ${theme.colors.black};
+   color: ${theme.colors.greyBlueDarker};
   }
   html {
     -webkit-font-smoothing: antialiased;

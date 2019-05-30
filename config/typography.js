@@ -21,6 +21,7 @@ const typography = new Typography({
     'Segoe UI Symbol',
   ],
   bodyFontFamily: [
+    'Hind Vadodara',
     'Lora',
     '-apple-system',
     'BlinkMacSystemFont',

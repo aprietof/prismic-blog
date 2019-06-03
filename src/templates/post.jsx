@@ -8,20 +8,53 @@ import Categories from '../components/Listing/Categories';
 import website from '../../config/website';
 
 const Hero = styled.section`
-  background-color: ${props => props.theme.colors.greyLight};
+  background-color: ${props => props.theme.colors.white};
   padding-top: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 `;
 
 const Headline = styled.p`
   font-family: 'Source Sans Pro', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial',
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  color: ${props => props.theme.colors.grey};
-  font-size: 1.25rem;
-  a {
-    font-style: normal;
-    font-weight: normal;
+  max-width: ${props => props.theme.maxWidthText};
+  margin: ${props => props.theme.margin.center};
+  padding-top: 1rem;
+
+  span {
+    color: ${props => props.theme.colors.greyLighter};
+    font-size: 0.9rem;
+    margin-right: 10px;
   }
+
+  a {
+    background: ${props => props.theme.colors.primary};
+    border-radius: 4px;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    font-weight: normal;
+    height: 36px;
+    letter-spacing: 0.3px;
+    line-height: 17px;
+    min-width: 200px;
+    opacity: 0.9;
+    padding: 4px 12px;
+    text-align: center;
+    white-space: nowrap;
+
+    :hover {
+      opacity: 1;
+      text-decoration: none;
+      transition: opacity 0.2s ease-in-out;
+    }
+  }
+`;
+
+const PostTitle = styled.h1`
+  max-width: ${props => props.theme.maxWidthText};
+  margin: ${props => props.theme.margin.center};
 `;
 
 const Post = ({ data: { prismicPost, posts }, location }) => {
@@ -37,14 +70,14 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
       <Hero>
         <Wrapper>
           <Header />
-          <Headline>
-            {data.date} — {categories && <Categories categories={categories} />}
-          </Headline>
-          <h1>{data.title.text}</h1>
         </Wrapper>
       </Hero>
       <Wrapper>
-        <Img fluid={data.featured_image.localFile.childImageSharp.fluid} />
+        <PostTitle>{data.title.text}</PostTitle>
+        <Headline>
+          <span>{data.date}</span> {categories && <Categories categories={categories} />}
+        </Headline>
+        {/* <Img fluid={data.featured_image.localFile.childImageSharp.fluid} /> */}
         <PostContent slices={data.body} />
         <Title style={{ marginTop: '4rem' }}>Recent posts</Title>
         <Listing posts={posts.edges} />

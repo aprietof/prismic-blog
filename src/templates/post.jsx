@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'react-emotion';
 import { Layout, Listing, Wrapper, PostContent, Title, SEO, Header } from 'components';
-import Img from 'gatsby-image';
+import Image from '../components/Image';
 import Categories from '../components/Listing/Categories';
 import website from '../../config/website';
 
 const Hero = styled.section`
   background-color: ${props => props.theme.colors.white};
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 `;
 
 const Headline = styled.p`
   font-family: 'Source Sans Pro', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial',
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   max-width: ${props => props.theme.maxWidthText};
-  margin: ${props => props.theme.margin.center};
+  margin: ${props => `0 auto ${props.theme.contentSeparator}`};
   padding-top: 1rem;
 
   span {
@@ -77,7 +77,7 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
         <Headline>
           <span>{data.date}</span> {categories && <Categories categories={categories} />}
         </Headline>
-        {/* <Img fluid={data.featured_image.localFile.childImageSharp.fluid} /> */}
+        <Image image={data.featured_image.localFile} />
         <PostContent slices={data.body} />
         <Title style={{ marginTop: '4rem' }}>Recent posts</Title>
         <Listing posts={posts.edges} />
@@ -110,6 +110,8 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
+            extension
+            publicURL
           }
         }
         title {

@@ -39,15 +39,14 @@ const Headline = styled.p`
     letter-spacing: 0.3px;
     line-height: 17px;
     min-width: 200px;
-    opacity: 0.9;
     padding: 4px 12px;
     text-align: center;
     white-space: nowrap;
 
     :hover {
-      opacity: 1;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 999px inset;
       text-decoration: none;
-      transition: opacity 0.2s ease-in-out;
+      transition: box-shadow 0.2s ease-in-out;
     }
   }
 `;

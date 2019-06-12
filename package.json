@@ -15,6 +15,7 @@
     "develop": "rm -rf ./.cache/  && rm -rf ./public/ && gatsby develop"
   },
   "dependencies": {
+    "dayjs": "^1.8.14",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "emotion-theming": "^9.2.9",

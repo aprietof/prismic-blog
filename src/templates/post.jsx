@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'react-emotion';
 import { Layout, Listing, Wrapper, PostContent, Title, SEO, Header } from 'components';
+import dayjs from 'dayjs';
 import Image from '../components/Image';
 import Categories from '../components/Listing/Categories';
 import website from '../../config/website';
@@ -58,6 +59,7 @@ const PostTitle = styled.h1`
 
 const Post = ({ data: { prismicPost, posts }, location }) => {
   const { data } = prismicPost;
+  const formattedDate = dayjs(data.date).format('MMM DD, YYYY');
   let categories = false;
   if (data.categories[0].category) {
     categories = data.categories.map(c => c.category.document[0].data.name);
@@ -74,7 +76,7 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
       <Wrapper>
         <PostTitle>{data.title.text}</PostTitle>
         <Headline>
-          <span>{data.date}</span> {categories && <Categories categories={categories} />}
+          <span>{formattedDate}</span> {categories && <Categories categories={categories} />}
         </Headline>
         <Image image={data.featured_image.localFile} />
         <PostContent slices={data.body} />
